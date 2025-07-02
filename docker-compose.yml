@@ -1,0 +1,13 @@
+services:
+  keycloak:
+    build:
+      context: .
+      args:
+        KEYCLOAK_REALM: ${KEYCLOAK_REALM}
+        KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID}
+        KEYCLOAK_REDIRECT_URI: ${KEYCLOAK_REDIRECT_URI}
+    ports:
+      - "8080:8080"
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
